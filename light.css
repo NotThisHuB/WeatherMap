@@ -1,0 +1,371 @@
+/* #region Main */
+body {
+  font-family: "Source Code Pro", monospace;
+  background: #c2bfbf;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100vh;
+}
+
+/* #endregion */
+
+/* #region Info */
+.panel {
+  visibility: hidden;
+  pointer-events: none;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.info {
+  pointer-events: none;
+  color: #212121;
+  display: flex;
+  box-sizing: border-box;
+  width: 90%;
+  height: 80%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 5%;
+}
+
+.card {
+  pointer-events: all;
+  background: transparent;
+  width: 45%;
+  height: 40%;
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  border-radius: 16px;
+  box-shadow: 2px 2px 7px #445256;
+  font-size: 115%;
+  border: 2px solid #445256;
+  box-sizing: border-box;
+}
+
+.miasto {
+  pointer-events: all;
+  background: transparent;
+  border-radius: 16px;
+  height: 75px;
+  width: 100%;
+  box-shadow: 2px 2px 4px #445256;
+  border: 2px solid #445256;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 125%;
+  color: #212121;
+  box-sizing: border-box;
+}
+.info p::first-letter {
+  text-transform: uppercase;
+}
+
+.fa-solid {
+  color: #b69c49;
+  font-size: 6em;
+}
+
+/* #endregion */
+
+/* #region Mapa */
+.map {
+  pointer-events: none;
+}
+
+.map a {
+  pointer-events: all;
+}
+
+a:focus .region {
+  transition: 0.2s;
+  transform: scale(1.005);
+  fill: #8c3a39;
+  cursor: pointer;
+  stroke: #212121;
+  stroke-width: 1px;
+}
+
+svg {
+  width: 50%;
+  height: 100%;
+}
+
+#PolandMap {
+  width: 50%;
+  height: 50%;
+}
+
+.region {
+  transition: all 0.3s ease;
+  fill: #445256;
+  cursor: pointer;
+  stroke: #212121;
+  stroke-width: 1px;
+}
+
+.region:hover {
+  transition: 0s;
+  transform: scale(1.005);
+  fill: #8c3a39;
+  cursor: pointer;
+  stroke: #212121;
+  stroke-width: 1px;
+}
+
+.region:active {
+  transition: 0s;
+  transform: scale(1.005);
+  /* fill: #292929; */
+  fill: #8c3a39;
+  cursor: pointer;
+  stroke: #212121;
+  stroke-width: 1px;
+}
+
+/* #endregion */
+
+/* #region Zegar */
+.zegarContainer {
+  pointer-events: none;
+  position: absolute;
+  bottom: 1vh;
+  left: 1vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 150%;
+  color: #212121;
+}
+
+.czas,
+.zegar {
+  pointer-events: none;
+}
+/* #endregion */
+
+/* #region Footer */
+.copyright {
+  pointer-events: none;
+  position: absolute;
+  bottom: 1vh;
+  width: 98vw;
+  right: 50%;
+  transform: translateX(50%);
+  text-align: right;
+  padding-right: 2vw;
+  color: #212121;
+}
+/* #endregion */
+
+/* #region Switch */
+.switch {
+  position: absolute;
+  display: inline-block;
+  top: 1vh;
+  left: 1vw;
+  width: 60px;
+  height: 34px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #445256;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #c2bfbf;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #8c3a39;
+  box-shadow: 0 0 1px #8c3a39;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #445256;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* #endregion */
+
+/* #region Media Query */
+
+@media only screen and (max-width: 1450px) {
+  .panel {
+    width: 60%;
+    height: 100%;
+  }
+  .fa-solid {
+    font-size: 6em;
+  }
+
+  .card {
+    width: 45%;
+  }
+}
+
+@media only screen and (max-width: 1350px) {
+  .panel {
+    width: 60%;
+    height: 100%;
+  }
+
+  .info {
+    transform: scale(0.9);
+  }
+
+  .fa-solid {
+    font-size: 5em;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .panel {
+    width: 60%;
+    height: 100%;
+  }
+}
+
+@media only screen and (max-width: 1010px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  .panel {
+    width: 100%;
+    height: 40%;
+  }
+
+  svg {
+    width: 100%;
+    height: 60%;
+  }
+  .card {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .fa-solid {
+    font-size: 2em;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .panel {
+    width: 100%;
+    height: 100%;
+  }
+  .fa-solid {
+    font-size: 2em;
+  }
+
+  svg {
+    height: 60%;
+  }
+
+  .zegarContainer {
+    display: none;
+  }
+
+  .copyright {
+    display: none;
+  }
+
+  .panel {
+    position: static;
+    width: 100%;
+    height: 40%;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  svg {
+    height: 50%;
+  }
+
+  .panel {
+    position: static;
+    width: 100%;
+    height: 40%;
+  }
+
+  .info {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .miasto {
+    width: 90%;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .zegarContainer {
+    display: none;
+  }
+
+  .copyright {
+    display: none;
+  }
+
+  .fa-solid {
+    font-size: 2em;
+  }
+}
+
+/* #endregion */
