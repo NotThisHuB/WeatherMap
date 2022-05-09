@@ -1,7 +1,7 @@
 # WeatherMap
 An interactive weather map of Poland which uses OpenWeather API to display accurate data.
 
-Previev on available on GitHub Pages:
+Preview on available on GitHub Pages:
 https://notthishub.github.io
 
 Made by:
