@@ -3,7 +3,7 @@ An interactive weather map of Poland which uses OpenWeather API to display accur
 
 ![](WeatherMap.gif)
 
-Preview on available on GitHub Pages:
+Preview available on GitHub Pages:
 https://notthishub.github.io
 
 Made by:
